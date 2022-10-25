@@ -1,0 +1,19 @@
+{
+  "name": "better_call_saul",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "Nikita Bezrukov",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-flash": "^0.0.2",
+    "nodemon": "^2.0.20"
+  }
+}

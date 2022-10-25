@@ -1,0 +1,217 @@
+<%- include('partials/header.ejs') %>
+
+    <!-- .page-content start -->
+    <div class="page-content custom-img-background dark page-title page-title-1 mb-70">
+        <div class="container">
+            <!-- .row start -->
+            <div class="row">
+                <!-- .col-md-6 start -->
+                <div class="col-md-6">
+                    <div class="custom-heading style-1 triggerAnimation animated" data-animate='fadeInUp'>
+                        <h1><span>Contact</span> me</h1>
+                    </div><!-- .custom-heading.style-1 end -->
+                </div><!-- .col-md-6 end -->
+                <!-- .col-md-6 start -->
+                <div class="col-md-6">
+                    <ol class="breadcrumb">
+                        <li>You are here:</li>
+                        <li><a href="/">Home</a></li>
+                        <li class="active">Contact me</li>
+                    </ol>
+                </div><!-- .col-md-6 end -->
+            </div><!-- .row end -->
+        </div><!-- .container end -->
+    </div><!-- .page-content end -->
+
+    <div class="page-content">
+        <div class="container">
+            <!-- .row start -->
+            <div class="row">
+                <!-- .col-md-12 start -->
+                <div class="col-md-12">
+                    <div id="map"></div>
+                </div><!-- .col-md-12 end -->
+            </div><!-- .row end -->
+            <div class="row">
+                <div class="col-md-8 col-xs-12">
+                    <div class="custom-heading">
+                        <h2>Contact us</h2>
+                    </div><!-- .custom-heading end -->
+                    <p>Have a question for us? Please fill in the form below and we’ll respond in 24 hours.</p>
+                    <!-- .contact-form start -->
+                    <div class="contact-form">
+                        <form class="wpcf7">
+                            <div class="form-group">
+                                <label>
+                                    <span class="required">*</span> Full Name:
+                                </label>
+                                <input name="author" type="text" class="wpcf7-text form-control" id="contact-name">
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    <span class="required">*</span> Your Email address
+                                </label>
+
+                                <input name="email" class="wpcf7-text form-control" type="email" id="contact-email">
+                            </div>
+
+                            <div class="form-group wpcf7-message">
+                                <label>
+                                    Your message (<span class="italic">Optional</span>):
+                                </label>
+                                <textarea name="message" class="wpcf7-textarea form-control" id="contact-message"
+                                    rows="4"></textarea>
+                            </div>
+
+                            <div id="recaptcha_response" class="g-recaptcha" data-sitekey="YOUR SITE KEY"></div>
+
+                            <input type="submit" class="wpcf7-submit btn btn-primary float-right comment-reply"
+                                value="Send" />
+
+                        </form>
+                    </div><!-- .comment-form end -->
+                </div><!-- .col-md-8 end -->
+
+                <aside class="col-md-4 col-xs-12 aside">
+                    <ul class="aside-widgets">
+
+                        <!-- .widget.widget-text start -->
+                        <li class="widget widget-text">
+                            <div class="quote style-3">
+                                <%- include('partials/getquickquote.ejs') %>
+                            </div>
+                        </li><!-- .widget-text end -->
+                        <li class="widget widget-text">
+                            <div class="title">
+                                <h2>Lawyer Company info</h2>
+                            </div>
+                            <ul>
+                                <li class="strong-item">
+                                    <span class="icon-container">
+                                        <img src="img/svg/map.svg" class="img-responsive" alt="map icon" />
+                                    </span>
+                                    Address: 9800 Montgomery Blvd NE, Albuquerque, NM 87111
+                                </li>
+                                <li class="strong-item">
+                                    <span class="icon-container">
+                                        <img src="img/svg/clock.svg" class="img-responsive" alt="clock icon" />
+                                    </span>
+                                    Mon-Fri: 10:00 - 18:00
+                                </li>
+                                <li class="strong-item">
+                                    <span class="icon-container">
+                                        <img src="img/svg/email.svg" class="img-responsive" alt="email icon" />
+                                    </span>
+                                    Email: LawyerSG@gmail.com
+                                </li>
+                            </ul>
+
+                        </li><!-- .widget.widget-text end -->
+
+                    </ul><!-- .aside-widgets end -->
+                </aside><!-- .aside end -->
+            </div><!-- .row end -->
+        </div><!-- .container end -->
+    </div><!-- .page-content end -->
+
+    <%- include('partials/footer.ejs') %>
+
+    <script src="js/jquery-2.1.4.min.js"></script><!-- jQuery library -->
+    <script src="bootstrap/js/bootstrap.min.js"></script><!-- .bootstrap script -->
+    <script src="js/jquery.scripts.min.js"></script><!-- modernizr, retina... -->
+    <script src="sharrre/jquery.sharrre-1.3.4.min.js"></script><!-- Sharrre post plugin -->
+    <script src="https://maps.googleapis.com/maps/api/js"></script> <!-- google maps -->
+    <script src="js/jquery.ui.map.full.min.js"></script><!-- google maps -->
+    <script src="js/retina.js"></script><!-- retina -->
+    <script src="js/include.js"></script><!-- custom js functions -->
+
+    <script>
+        /* <![CDATA[ */
+        jQuery(document).ready(function ($) {
+            'use strict';
+
+            // GOOGLE MAPS START
+            window.marker = null;
+
+            function initialize() {
+                var map;
+
+                var albuquerque = new google.maps.LatLng(35.130496194288135, -106.53242480178233);
+
+                var style = [
+                    {
+                        "featureType": "road",
+                        "elementType":
+                            "labels.icon"
+                    }
+                ];
+
+                var mapOptions = {
+                    // SET THE CENTER
+                    center: albuquerque,
+                    // SET THE MAP STYLE & ZOOM LEVEL
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    zoom: 14,
+                    // SET THE BACKGROUND COLOUR
+                    backgroundColor: "#eeeeee",
+                    // REMOVE ALL THE CONTROLS EXCEPT ZOOM
+                    panControl: true,
+                    zoomControl: true,
+                    mapTypeControl: true,
+                    scaleControl: true,
+                    streetViewControl: true,
+                    overviewMapControl: true,
+                    scrollwheel: false,
+                    zoomControlOptions: {
+                        style: google.maps.ZoomControlStyle.SMALL
+                    }
+
+                };
+                map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+                // SET THE MAP TYPE
+                var mapType = new google.maps.StyledMapType(style, { name: "Grayscale" });
+                map.mapTypes.set('grey', mapType);
+                map.setMapTypeId('grey');
+
+                //CREATE A CUSTOM PIN ICON
+                var marker_image = 'img/pin.png';
+                var pinIcon = new google.maps.MarkerImage(marker_image, null, null, null, new google.maps.Size(21, 34));
+
+                marker = new google.maps.Marker({
+                    position: albuquerque,
+                    map: map,
+                    icon: pinIcon,
+                    title: 'Better Call Saul Company, Albuquerque'
+                });
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+
+            // CONTACT FORM AJAX SUBMIT START
+            $('.wpcf7 .wpcf7-submit').on('click', function (event) {
+                event.preventDefault();
+                var name = $('#contact-name').val();
+                var email = $('#contact-email').val();
+                var message = $('#contact-message').val();
+                var recaptcha = grecaptcha.getResponse($("recaptcha_response")[0]);
+                var form_data = new Array({ 'Name': name, 'Email': email, 'Message': message, 'Recaptcha': recaptcha });
+
+                $.ajax({
+                    type: 'POST',
+                    url: "contact.php",
+                    data: ({ 'action': 'contact', 'form_data': form_data })
+                }).done(function (data) {
+                    alert(data);
+                });
+            }); // CONTACT FORM AJAX SUBMIT END
+
+        });
+            /* ]]> */
+    </script>
+
+
+</body>
+
+</html>
