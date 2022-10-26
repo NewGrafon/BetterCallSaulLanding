@@ -110,9 +110,9 @@ app.get('/news', (req, res) => {
     }
 });
 
-app.get('/news_single', (req, res) => {
+app.get('/case_single', (req, res) => {
     try {
-        res.render('news_single');
+        res.render('case_single');
     } catch (e) {
         console.log(e);
         res.redirect('/');
