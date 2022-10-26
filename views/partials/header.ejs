@@ -120,12 +120,14 @@
                                             <li <% if (page == '/services') { %>class="current-menu-item"<% } %> >
                                                 <a href="/services">Services</a>
                                             </li>
-
-                                            <li <% if (page == '/cases' || page == '/case_single') { %>class="current-menu-item"<% } %> >
+                                            
+                                            <% let prevPage; try { if (previousPage == 'news' || previousPage == 'cases') prevPage = previousPage; } catch(e) { prevPage = null; } %>
+                                            
+                                            <li <% if (page == '/cases' || (page == '/case_single' && prevPage == null) || prevPage == 'cases') { %>class="current-menu-item"<% } %> >
                                                 <a href="/cases">Cases</a>
                                             </li>
 
-                                            <li <% if (page == '/news') { %>class="current-menu-item"<% } %> >
+                                            <li <% if (page == '/news' || prevPage == 'news') { %>class="current-menu-item"<% } %> >
                                                 <a href="/news">News</a>
                                             </li>
 
