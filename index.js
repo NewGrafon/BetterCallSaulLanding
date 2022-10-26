@@ -4,13 +4,14 @@ const   fs = require('fs'),
         express = require('express'),
         app = express(),
         ejs = require('ejs'),
+        bodyParser = require('body-parser'),
         path = require('path');
 
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
-//app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 const LifecycleEvent = process.env.npm_lifecycle_event;
@@ -75,64 +76,76 @@ start();
 // const WebNameToUser = DOMAIN != null ? DOMAIN : localURL;
 
 /* ЗАПРОСЫ */
-
-app.get('/', (req, res) => {
+const main = '/';
+app.get(main, (req, res) => {
     try {
-        res.render('index');
+        res.render('index', {page: main});
     } catch (e) {
         console.log(e);
         res.redirect('/');
     }
 });
 
-app.get('/about_me', (req, res) => {
+const aboutMe = '/about_me';
+app.get(aboutMe, (req, res) => {
     try {
-        res.render('aboutMe');
+        res.render('aboutMe', {page: aboutMe});
     } catch (e) {
         console.log(e);
         res.redirect('/');
     }
 });
 
-app.get('/services', (req, res) => {
+const services = '/services';
+app.get(services, (req, res) => {
     try {
-        res.render('services');
+        res.render('services', {page: services});
     } catch (e) {
         console.log(e);
         res.redirect('/');
     }
 });
 
-app.get('/cases', (req, res) => {
+const cases = '/cases';
+app.get(cases, (req, res) => {
     try {
-        res.render('cases');
+        res.render('cases', {page: cases});
     } catch (e) {
         console.log(e);
         res.redirect('/');
     }
 });
 
-app.get('/news', (req, res) => {
+const news = '/news';
+app.get(news, (req, res) => {
     try {
-        res.render('news');
+        res.render('news', {page: news});
     } catch (e) {
         console.log(e);
         res.redirect('/');
     }
 });
 
-app.get('/case_single', (req, res) => {
+const caseSingle = '/case_single';
+app.get(caseSingle, (req, res) => {
     try {
-        res.render('case_single');
+        let prevPage = '';
+        if (req.query.prevPage != (null || undefined))
+            prevPage = req.query.prevPage == 'news' ? 'news' 
+                        : req.query.prevPage == 'cases' ? 'cases' 
+                        : prevPage;
+        
+        res.render('case_single', {page: caseSingle, previousPage: prevPage});
     } catch (e) {
         console.log(e);
         res.redirect('/');
     }
 });
 
-app.get('/contacts', (req, res) => {
+const contacts = '/contacts';
+app.get(contacts, (req, res) => {
     try {
-        res.render('contacts');
+        res.render('contacts', {page: contacts});
     } catch (e) {
         console.log(e);
         res.redirect('/');
