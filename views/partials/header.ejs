@@ -109,27 +109,27 @@
                                     <!-- MAIN NAVIGATION -->
                                     <div class="collapse navbar-collapse" id="navbar-collapse">
                                         <ul class="nav navbar-nav">
-                                            <li class="current-menu-item">
+                                            <li <% if (page == '/') { %>class="current-menu-item"<% } %> >
                                                 <a href="/">Home</a>
                                             </li>
 
-                                            <li>
+                                            <li <% if (page == '/about_me') { %>class="current-menu-item"<% } %> >
                                                 <a href="/about_me">About me</a>
                                             </li>
 
-                                            <li>
+                                            <li <% if (page == '/services') { %>class="current-menu-item"<% } %> >
                                                 <a href="/services">Services</a>
                                             </li>
 
-                                            <li>
+                                            <li <% if (page == '/cases' || page == '/case_single') { %>class="current-menu-item"<% } %> >
                                                 <a href="/cases">Cases</a>
                                             </li>
 
-                                            <li>
+                                            <li <% if (page == '/news') { %>class="current-menu-item"<% } %> >
                                                 <a href="/news">News</a>
                                             </li>
 
-                                            <li>
+                                            <li <% if (page == '/contacts') { %>class="current-menu-item"<% } %> >
                                                 <a href="/contacts">Contacts</a>
                                             </li>
                                         </ul><!-- .nav.navbar-nav end -->
