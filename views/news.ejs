@@ -1,290 +1,79 @@
 <%- include('partials/header.ejs') %>
 
-        <!-- .page-content start -->
-        <div class="page-content custom-img-background dark page-title page-title-1 mb-70">
-            <div class="container">
-                <!-- .row start -->
-                <div class="row">
-                    <!-- .col-md-6 start -->
-                    <div class="col-md-6">
-                        <div class="custom-heading style-1 triggerAnimation animated" data-animate='fadeInUp'>
-                            <h1>Company <span>News</span></h1>
-                        </div><!-- .custom-heading end -->
-                    </div><!-- .col-md-6 end -->
-                    <!-- .col-md-6 start -->
-                    <div class="col-md-6">
-                        <ol class="breadcrumb">
-                            <li>You are here:</li>
-                            <li><a href="#">Home</a></li>
-                            <li class="active">News</li>
-                        </ol>
-                    </div><!-- .col-md-6 end -->
-                </div><!-- .row end -->
-            </div><!-- .container end -->
-        </div><!-- .page-content end -->
+    <!-- .page-content start -->
+    <div class="page-content custom-img-background dark page-title page-title-1 mb-70">
+        <div class="container">
+            <!-- .row start -->
+            <div class="row">
+                <!-- .col-md-6 start -->
+                <div class="col-md-6">
+                    <div class="custom-heading style-1 triggerAnimation animated" data-animate='fadeInUp'>
+                        <h1>Company <span>News</span></h1>
+                    </div><!-- .custom-heading end -->
+                </div><!-- .col-md-6 end -->
+                <!-- .col-md-6 start -->
+                <div class="col-md-6">
+                    <ol class="breadcrumb">
+                        <li>You are here:</li>
+                        <li><a href="/">Home</a></li>
+                        <li class="active">News</li>
+                    </ol>
+                </div><!-- .col-md-6 end -->
+            </div><!-- .row end -->
+        </div><!-- .container end -->
+    </div><!-- .page-content end -->
 
-        <div class="page-content">
-            <div class="container">
-                <div class="row">
-                    <ul class="col-md-8 blog-posts post-list">
-                        <li class="blog-post clearfix">
-                            <div class="post-media">
-                                <a href="news-single.html">
-                                    <img src="img/news/news-6.jpg" class="img-responsive" alt="Construction HTML Template"/>
-                                </a>
-                            </div><!-- .post-media end -->
-                            <div class="icon-container">
-                                <i class="fa fa-calendar"></i>
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+                <ul class="col-md-8 blog-posts post-list">
+                    <%- include('partials/blogPost.ejs') %>
+                    <%- include('partials/blogPost.ejs') %>
+                    <%- include('partials/blogPost.ejs') %>
+                    <li>
+                        <nav>
+                            <ul class="pagination">
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">...</a></li>
+                                <li><a href="#">15</a></li>
+                                <li>
+                                    <a href="#" class=" fa fa-angle-right" aria-label="Next"></a>
+                                </li>
+                            </ul><!-- .pagination end -->
+                        </nav>
+                    </li>
+                </ul>
+
+
+                <%- include('partials/lawyerCompany.ejs') %>
+
+                    <%- include('partials/brochure.ejs') %>
+
+                        <!-- .widget.widget-text start -->
+                        <li class="widget widget-text">
+                            <div class="quote style-3">
+                                <%- include('partials/getquickquote.ejs') %>
                             </div>
+                        </li><!-- .widget-text end -->
 
-                            <div class="post-body">
-                                <div class="post-date">
-                                    <p>
-                                        dec 22, 2015
-                                    </p>
-                                </div>
-                                <a href="news-single.html">
-                                    <h3>Remodeling southern family house in South Hamptopns </h3>
-                                </a>
+                        <%- include('partials/latestCases.ejs') %>
+                            </ul><!-- .aside-widgets end -->
+                            </aside><!-- .aside end -->
+            </div><!-- .row end -->
+        </div><!-- .container end -->
+    </div><!-- .page-content end -->
 
-                                <p>
-                                    Nullam nec mauris ornare lectus imperdiet pretium et vitae mi.
-									Nulla efficitur a turpis ac luctus. Nulla facilisi. Nullam tincidunt massa at nisi lobortis vehicula.
-									Praesent sit amet metus accumsan augue lobortis porta. Nunc placerat aliquam dignissim.
-                                    <a href="news-single.html" class="read-more">
-                                        <span>
-                                            [...]
-                                        </span>
-                                    </a>
-                                </p>
-
-
-                            </div><!-- .post-body end -->
-                        </li><!-- .blog-post end -->
-
-                        <li class="blog-post clearfix">
-                            <div class="post-media">
-                                <a href="news-single.html">
-                                    <img src="img/news/news-7.jpg" class="img-responsive" alt="Construction HTML Template"/>
-                                </a>
-                            </div><!-- .post-media end -->
-                            <div class="icon-container">
-                                <i class="fa fa-calendar"></i>
-                            </div>
-
-                            <div class="post-body">
-                                <div class="post-date">
-                                    <p>
-                                        dec 22, 2015
-                                    </p>
-                                </div>
-                                <a href="news-single.html">
-                                    <h3>Construction company summit December 2015</h3>
-                                </a>
-
-                                <p>
-                                    Nullam nec mauris ornare lectus imperdiet pretium et vitae mi.
-									Nulla efficitur a turpis ac luctus. Nulla facilisi. Nullam tincidunt massa at nisi lobortis vehicula.
-									Praesent sit amet metus accumsan augue lobortis porta. Nunc placerat aliquam dignissim.
-                                    <a href="news-single.html" class="read-more">
-                                        <span>
-                                            [...]
-                                        </span>
-                                    </a>
-                                </p>
-
-
-                            </div><!-- .post-body end -->
-                        </li><!-- .blog-post end -->
-
-                        <li class="blog-post clearfix">
-                            <div class="post-media">
-                                <a href="news-single.html">
-                                    <img src="img/news/news-8.jpg" class="img-responsive" alt="Construction HTML Template"/>
-                                </a>
-                            </div><!-- .post-media end -->
-                            <div class="icon-container">
-                                <i class="fa fa-calendar"></i>
-                            </div>
-
-                            <div class="post-body">
-                                <div class="post-date">
-                                    <p>
-                                        dec 22, 2015
-                                    </p>
-                                </div>
-                                <a href="news-single.html">
-                                    <h3>Interior modeling and design project</h3>
-                                </a>
-
-                                <p>
-                                    Nullam nec mauris ornare lectus imperdiet pretium et vitae mi.
-									Nulla efficitur a turpis ac luctus. Nulla facilisi. Nullam tincidunt massa at nisi lobortis vehicula.
-									Praesent sit amet metus accumsan augue lobortis porta.
-                                    <a href="news-single.html" class="read-more">
-                                        <span>
-                                            [...]
-                                        </span>
-                                    </a>
-                                </p>
-
-
-                            </div><!-- .post-body end -->
-                        </li><!-- .blog-post end -->
-                        <li>
-                            <nav>
-                                <ul class="pagination">
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">...</a></li>
-                                    <li><a href="#">15</a></li>
-                                    <li>
-                                        <a href="#" class=" fa fa-angle-right" aria-label="Next"></a>
-                                    </li>
-                                </ul><!-- .pagination end -->
-                            </nav>
-                        </li>
-                    </ul>
-
-
-                    <aside class="col-md-4 aside">
-                        <ul class="aside-widgets">
-                            <li class="widget widget_nav_menu clearfix">
-                                <div class="title">
-                                    <h3>Builder Company</h3>
-                                </div>
-
-                                <ul class="menu">
-                                    <li class="menu-item">
-                                        <a href="about.html">Company profile</a>
-                                    </li>
-
-                                    <li class="menu-item">
-                                        <a href="project-single.html">House rennovation</a>
-                                    </li>
-
-                                    <li class="menu-item">
-                                        <a href="project-single.html">Construction</a>
-                                    </li>
-
-                                    <li class="menu-item">
-                                        <a href="project-single.html">Interior design</a>
-                                    </li>
-
-                                    <li class="menu-item">
-                                        <a href="project-single.html">Project management</a>
-                                    </li>
-                                </ul><!-- .menu end -->
-                            </li><!-- .widget.widget_nav_menu end -->
-
-                            <li class="widget widget_nav_menu clearfix">
-                                <div class="title">
-                                    <h3>Brochure download</h3>
-                                </div>
-                                <ul class="menu">
-                                    <li class="menu-item">
-                                        <a href="file/example.pdf" target="_blank" class="download-link">
-                                            <i class="fa fa-file-pdf-o"></i>
-                                            Brochures_2016_en.pdf
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="file/example.pdf" target="_blank" class="download-link">
-                                            <i class="fa fa-file-pdf-o"></i>
-                                            Brochures_2016_de.pdf
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li><!-- .widget.widget_nav_menu end -->
-
-                            <!-- .widget.widget-text start -->
-                            <li class="widget widget-text">
-                                <div class="quote style-3">
-                                    <div class="feature-body">
-                                        <span class="icon-container triggerAnimation animated" data-animate='zoomIn'>
-                                            <img src="img/svg/screwdriver.svg" class="img-responsive" alt="cordless screw driver icon"/>
-                                        </span>
-                                        <div class="custom-heading style-1">
-                                            <a href="contact.html">
-                                                <h4>Get a quick quote</h4>
-                                            </a>
-                                        </div><!-- .custom-heading end -->
-                                        <p>
-                                            Need construction service cost estimation? Get a quick quote!
-                                        </p>
-                                    </div><!-- .feature-body end -->
-                                </div>
-                            </li><!-- .widget-text end -->
-
-                            <!-- .widget_recent_entries start -->
-                            <li class="widget widget_recent_entries">
-                                <div class="title">
-                                    <h3>Latest Posts</h3>
-                                </div>
-
-                                <ul>
-                                    <li>
-                                        <a href="news-single.html">
-                                            <i class="fa fa-calendar"></i>
-                                            <p>House renovation,<span class="post-date">03 Jan 2016</span></p>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="news-single.html">
-                                            <i class="fa fa-file-pdf-o"></i>
-                                            <p>New interior design project in house in Hamptons,<span class="post-date">27 Dec 2016</span></p>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="news-single.html">
-                                            <i class="fa fa-calendar"></i>
-                                            <p>Company of a year award,<span class="post-date">18 Dec 2016</span></p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li><!-- .widget_recent_entries end -->
-                        </ul><!-- .aside-widgets end -->
-                    </aside><!-- .aside end -->
-                </div><!-- .row end -->
-            </div><!-- .container end -->
-        </div><!-- .page-content end -->  
-
-        <!-- .page-content start -->
-        <div class="page-content quote style-1 custom-background bkg-black dark">
-            <!-- .container start -->
-            <div class="container">
-                <!-- .row start -->
-                <div class="row mb-0">
-                    <!-- .col-md-9 start -->
-                    <div class="col-md-9 col-sm-9 col-xs-12 mb-0">
-                        <div class="quote-content">
-                            <div class="text">
-                                <h3>Sed ut perspiciatis unde omnis iste natus error sit volup tatem.</h3>
-                            </div>
-                        </div>
-                    </div><!-- .col-md-9 end -->
-                    <!-- .col-md-3 start -->
-                    <div class="col-md-3 col-sm-3 col-xs-12 mb-50">
-                        <div class="quote-btn">
-                            <a href='contact.html' class="btn btn-primary float-right">
-                                Get Support
-                            </a>
-                        </div>
-                    </div><!-- .col-md-3 end -->
-                </div><!-- .row end -->
-            </div><!-- .container end -->
-        </div><!-- .page-content.custom-background end -->
+    <%- include('partials/getsupport.ejs') %>
 
         <%- include('partials/footer.ejs') %>
 
-        <script src="js/jquery-2.1.4.min.js"></script><!-- jQuery library -->
-        <script src="bootstrap/js/bootstrap.min.js"></script><!-- .bootstrap script -->
-        <script src="js/jquery.scripts.min.js"></script><!-- modernizr, retina... -->  
-		<script src="js/retina.js"></script><!-- retina script -->
-        <script src="js/include.js"></script><!-- custom js functions -->
+            <script src="js/jquery-2.1.4.min.js"></script><!-- jQuery library -->
+            <script src="bootstrap/js/bootstrap.min.js"></script><!-- .bootstrap script -->
+            <script src="js/jquery.scripts.min.js"></script><!-- modernizr, retina... -->
+            <script src="js/retina.js"></script><!-- retina script -->
+            <script src="js/include.js"></script><!-- custom js functions -->
 
-    </body>
+            </body>
 
-</html>
+            </html>
