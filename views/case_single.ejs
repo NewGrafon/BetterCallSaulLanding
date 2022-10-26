@@ -16,7 +16,11 @@
                     <ol class="breadcrumb">
                         <li>You are here:</li>
                         <li><a href="/">Home</a></li>
+                        <% if (previousPage == 'news') { %>
                         <li><a href="/news">News</a></li>
+                        <% } else if (previousPage == 'cases') { %>
+                        <li><a href="/cases">Completed cases</a></li>
+                        <% } %>
                         <li class="active">Case name</li>
                     </ol>
                 </div><!-- .col-md-6 end -->
