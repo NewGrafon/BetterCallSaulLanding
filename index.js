@@ -60,6 +60,17 @@ async function start() {
     }
 }
 
+async function readAndFixFirstLine(path) {
+    const inputStream = fs.createReadStream(path);
+    try {
+        for await (const line of readline.createInterface(inputStream)) return line.replaceAll(' ', '');
+        return null; // If the file is empty.
+    }
+    finally {
+        inputStream.destroy(); // Destroy file stream.
+    }
+}
+
 start();
 // const WebNameToUser = DOMAIN != null ? DOMAIN : localURL;
 
