@@ -45,13 +45,14 @@ if (LifecycleEvent == 'dev') {
 
 async function start() {
     try {
-        if (LifecycleEvent != 'dev') 
+        if (LifecycleEvent != 'dev') {
             DOMAIN = await readAndFixFirstLine('DOMAIN.txt');
+        }
         else 
             DOMAIN = null;
 
         app.listen(SERVER_PORT, () => {
-            if (LifecycleEvent == 'dev')
+            if (LifecycleEvent == 'dev' || DOMAIN == null)
                 console.log(`Link to site: ${localURL}`);
             else
                 console.log(`Link to site: ${DOMAIN}`);
@@ -66,6 +67,8 @@ async function readAndFixFirstLine(path) {
     try {
         for await (const line of readline.createInterface(inputStream)) return line.replaceAll(' ', '');
         return null; // If the file is empty.
+    } catch (e) {
+        fs.writeFileSync(path, '');
     }
     finally {
         inputStream.destroy(); // Destroy file stream.
